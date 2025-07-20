@@ -1,415 +1,1204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEND | Premium Web Design for Event Professionals</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="asset/vend-logo.png" type="image/png" >
-</head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-logo">
-            <div class="preloader-logo-inner"></div>
-        </div>
-        <div class="preloader-text">Loading...</div>
-    </div>
+/* ===== BASE ===== */
+:root {
+  --primary: #000000;
+  --secondary: #111111;
+  --accent: #000000;
+  --text: #333333;
+  --text-light: #777777;
+  --bg: #FFFFFF;
+  --card-bg: #F8F8F8;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
 
-    <!-- Header -->
-    <header>
-      <div class="container header-container">
-        <!-- Logo Placeholder - Replace with your logo -->
-        <div class="logo-placeholder">
-            <img src="asset/vend-logo.jpeg" alt="VEND Logo">
-        </div>
-            
-            <!-- Mobile Menu Toggle -->
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <!-- Navigation -->
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
+.dark-mode {
+  --primary: #FFFFFF;
+  --secondary: #EEEEEE;
+  --accent: #FFFFFF;
+  --text: #E0E0E0;
+  --text-light: #AAAAAA;
+  --bg: #121212;
+  --card-bg: #1E1E1E;
+}
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-abstract">
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
-            <div class="hero-shape hero-shape-3"></div>
-            <div class="hero-shape hero-shape-4"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content animate">
-                <h1>I'll build it first. You judge later</h1>
-                <p>Designed to attract better clients and bookings. Fully mobile, SEO-friendly, and crafted for your niche before any payment is made.</p>
-                <div class="cta-buttons">
-                    <a href="#portfolio" class="btn btn-primary btn-ripple" id="viewWorkBtn">View Our Work Samples</a>
-                    <a href="#contact" class="btn btn-secondary" id="getMockupBtn">Get Free Homepage Preview</a>
-                </div>
-            </div>
-        </div>
-    </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content animate">
-                    <div class="section-title">
-                        <h2>About VEND</h2>
-                        <p>Web design that works as hard as you do</p>
-                    </div>
-                    <p class="about-text">VEND is a creative web design and SEO service built specifically for event planners, catering brands, and rental businesses. Our mission is simple: to craft sleek, mobile-friendly websites that attract better clients and drive real growth.</p>
-                    <p class="about-text">Each project is custom-designed to reflect the brand it represents with clear messaging, strong visuals, and the backend power to be found online.</p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile-first, modern design</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-search"></i>
-                            <span>SEO built for local discovery</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Visual layouts made for Instagram-style content</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-bolt"></i>
-                            <span>Delivered fast, with zero upfront cost for demos</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image animate delay-1">
-                    <div class="image-wrapper">
-                        <div class="image-placeholder" style="background-image: url('asset/about-vend.avif');"></div>
-                        <div class="image-highlight"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  transition: var(--transition);
+  overflow-x: hidden;
+}
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Specialized Services</h2>
-                <p>Tailored solutions for event industry professionals</p>
-            </div>
-            <div class="service-cards">
-                <div class="service-card animate delay-1">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Event Planners</h3>
-                    <p>Gallery-rich designs with booking systems and vendor showcases to display your portfolio.</p>
-                </div>
-                <div class="service-card animate delay-2">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Caterers</h3>
-                    <p>Beautiful menu displays with tasting request forms and client testimonials.</p>
-                </div>
-                <div class="service-card animate delay-3">
-                    <i class="fas fa-chair"></i>
-                    <h3>Rental Businesses</h3>
-                    <p>Interactive inventory galleries with instant inquiry buttons and availability calendars.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>See examples of our work for event industry clients</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item animate delay-1">
-                    <div class="portfolio-img" style="background-image: url('asset/renvows-sample.png');"></div>
-                    <div class="portfolio-info">
-                        <h3>Luxe Events NG</h3>
-                        <p>Wedding planning business website</p>
-                        <a href="https://vend321.github.io/Renzows-event-design/Renzows%20Event/" class="btn btn-primary btn-ripple">View Live Site</a>
-                    </div>
-                </div>
-                <div class="portfolio-item animate delay-2">
-                    <div class="portfolio-img" style="background-image: url('asset/Ducaks-event.png');"></div>
-                    <div class="portfolio-info">
-                        <h3>Luxe Events </h3>
-                        <p>Wedding planning business website</p>
-                        <a href=" https://vend321.github.io/Decaksevent/Ducaksevent/" class="btn btn-primary btn-ripple">View Live Site</a>
-                    </div>
-                </div>
-                <div class="portfolio-item animate delay-2">
-                    <div class="portfolio-img" style="background-image: url('asset/spicy-chow-sample.png');"></div>
-                    <div class="portfolio-info">
-                        <h3>Tasty Bites Catering</h3>
-                        <p>Menu showcase with online orders</p>
-                        <a href="https://vend321.github.io/Spicychow/spicy%20chow/" class="btn btn-primary btn-ripple">View Live Site</a>
-                    </div>
-                </div>
-                <div class="portfolio-item animate delay-3">
-                    <div class="portfolio-img" style="background-image: url('asset/kitchen-contact.png');"></div>
-                    <div class="portfolio-info">
-                        <h3>Elite Rentals</h3>
-                        <p>Furniture rental gallery</p>
-                        <a href="https://vend321.github.io/Kitchen-contact-catalogue/kitchen%20contact%20catalogue/index.html" class="btn btn-primary btn-ripple">View Live Site</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* ===== HERO SECTION ===== */
+.hero {
+  padding: 120px 0 30px;
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client Success Stories</h2>
-                <p>Real results from businesses we've worked with</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card animate delay-1">
-                    <div class="whatsapp-testimonial">
-                      "VEND truly understood the look I was going for - classy, elegant, and easy to use. My new website feels like a proper extension of my brand. Clients can now check my past events and contact me directly. Everything just feels more professional."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JD</div>
-                        <div>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <div>— Event Planner, Lagos</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate delay-2">
-                    <div class="whatsapp-testimonial">
-                      "I wasn't sure about getting a website at first, but working with VEND was one of the best decisions I made. The site looks clean, modern, and it really shows off my menu and past events. I've already had a few new clients say they found me online!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AM</div>
-                        <div>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <div>— Catering Business Owner</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate delay-3">
-                    <div class="whatsapp-testimonial">
-                      "Working with VEND was smooth and reliable. I didn't even have to double-check - I just trusted the work was done right. Thank you!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">KC</div>
-                        <div>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <div>— Event catering rentals, Abuja</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h2>Simple Pricing</h2>
-                <p>Choose the package that fits your needs</p>
-            </div>
-            <div class="pricing-tabs">
-                <div class="pricing-tab active">Monthly</div>
-                <div class="pricing-tab">Annual (Save 20%)</div>
-            </div>
-            <div class="pricing-cards">
-                <div class="pricing-card animate delay-1">
-                    <h3>Starter</h3>
-                    <div class="price">₦50k <span>/ one-time</span></div>
-                    <ul class="pricing-features">
-                        <li>1-Page Website</li>
-                        <li>Mobile Responsive</li>
-                        <li>WhatsApp Integration</li>
-                        <li>Basic SEO Setup</li>
-                        <li>1 Revision</li>
-                    </ul>
-                    <a href="https://wa.me/2348135770477?text=Hi%20Vend%2C%20I'm%20interested%20in%20the%20%E2%82%A650%2C000%20website%20package.%20Can%20you%20share%20what%20it%20includes%3F" class="btn btn-secondary btn-ripple">Get Started</a>
-                </div>
-                <div class="pricing-card featured animate delay-2">
-                    <h3>Professional</h3>
-                    <div class="price">₦100k <span>/ one-time</span></div>
-                    <ul class="pricing-features">
-                        <li>5-Page Website</li>
-                        <li>Advanced Mobile Design</li>
-                        <li>Booking System</li>
-                        <li>SEO Optimization</li>
-                        <li>3 Revisions</li>
-                        <li>1 Year Hosting</li>
-                    </ul>
-                    <a href="https://wa.me/2348135770477?text=Hi%20Vend%2C%20I'd%20like%20to%20know%20more%20about%20the%20%E2%82%A6100%2C000%20package.%20What%20comes%20with%20it%3F" class="btn btn-primary btn-ripple">Most Popular</a>
-                </div>
-                <div class="pricing-card animate delay-3">
-                    <h3>Enterprise</h3>
-                    <div class="price">₦200k <span>/ one-time</span></div>
-                    <ul class="pricing-features">
-                        <li>10+ Page Website</li>
-                        <li>E-Commerce Features</li>
-                        <li>Priority Support</li>
-                        <li>Advanced SEO</li>
-                        <li>Unlimited Revisions</li>
-                        <li>2 Years Hosting</li>
-                    </ul>
-                    <a href="https://wa.me/2348135770477?text=Hi%20Vend%2C%20I'm%20interested%20in%20the%20premium%20%E2%82%A6200%2C000%20package.%20Can%20you%20send%20details%3F" class="btn btn-secondary btn-ripple">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero h1 {
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: var(--primary);
+}
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know before getting started</p>
-            </div>
-            <div class="faq-list">
-              <div class="faq-item animate delay-1">
-                <div class="faq-question">
-                    <span>What is SEO?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p><strong>SEO (Search Engine Optimization)</strong> helps your website appear higher in search results like Google. By optimizing keywords, content, and technical setup, you attract more visitors without paid ads.</p>
-                        <p><em>Example for event planners:</em> If you organize weddings, good SEO ensures your site ranks when couples search for "best wedding planners in [your city]."</p>
-                    </div>
-                </div>
-            </div>
-                <div class="faq-item animate delay-1">
-                    <div class="faq-question">
-                        <span>How long does it take to build my website?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Most websites are completed within 7-14 days after we receive all your content (photos, text, etc.). More complex projects may take 3-4 weeks. We offer rush delivery for an additional fee.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item animate delay-2">
-                    <div class="faq-question">
-                        <span>Do I need to pay everything upfront?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>No! We require 50% to start the project, and the remaining 50% only after you approve the final design. This ensures you're completely satisfied before making the final payment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item animate delay-3">
-                    <div class="faq-question">
-                        <span>What if I need changes after launch?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>We offer affordable maintenance plans starting at ₦10k/month for updates, security checks, and minor changes. For larger updates, we provide custom quotes based on the work required.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item animate delay-4">
-                    <div class="faq-question">
-                        <span>Will my website work on mobile phones?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Absolutely! All our websites are designed mobile-first, ensuring perfect display and functionality on all devices from smartphones to desktop computers.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero p {
+  margin-bottom: 40px;
+  color: var(--text-light);
+}
 
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="cta-bg-element"></div>
-        <div class="cta-bg-element"></div>
-        <div class="container">
-            <div class="cta-content animate">
-                <h2>Ready to Transform Your Online Presence?</h2>
-                <p>Get a free homepage mockup within 48 hours—no commitment required.</p>
-                <a href="https://wa.me/2348135770477" class="btn btn-primary btn-ripple">Get Free Homepage Preview</a>
-                <p style="margin-top: 20px; font-size: 0.9rem;">Only 3 slots left this month!</p>
-            </div>
-        </div>
-    </section>
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">VEND</div>
-                    <p>We design high-converting websites for event professionals across Nigeria.</p>
-                    <div class="social-links">
-                        <a href="https://wa.me/2348135770477"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/vend_agency?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Event Planner Websites</a></li>
-                        <li><a href="#">Catering Websites</a></li>
-                        <li><a href="#">Rental Business Sites</a></li>
-                        <li><a href="#">Website Maintenance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="https://wa.me/2348135770477">WhatsApp</a></li>
-                        <li><a href="mailto:vendagency@gmail.com">vendagency@gmail.com</a></li>
-                        <li>Lagos, Nigeria</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 VEND Designs. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+/* ===== ABOUT SECTION ===== */
+.about {
+  padding: 30px 0 50px;
+  position: relative;
+  margin-top: -20px;
+  z-index: 2;
+  background-color: var(--bg);
+}
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-</body>
-</html>
+.about::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: var(--bg);
+  clip-path: ellipse(75% 100% at 50% 0%);
+  z-index: -1;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+}
+
+.about-text {
+  margin-bottom: 20px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.features-list {
+  margin-top: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.feature-item i {
+  color: var(--primary);
+  margin-right: 15px;
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
+
+.feature-item span {
+  flex: 1;
+}
+
+.about-image {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .image-wrapper {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (min-width: 768px) {
+  .hero {
+    padding: 150px 0 60px;
+    min-height: 80vh;
+  }
+  
+  .about {
+    padding: 60px 0 90px;
+    margin-top: -40px;
+  }
+  
+  .about::before {
+    top: -30px;
+    height: 30px;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  
+  .image-placeholder {
+    height: 400px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding: 180px 0 80px;
+    min-height: 700px;
+  }
+  
+  .about {
+    padding: 80px 0 100px;
+  }
+}
+
+/* ===== REST OF YOUR STYLES ===== */
+/* (Include all other section styles from your original CSS below this point) */
+
+body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+color: var(--text);
+background-color: var(--bg);
+line-height: 1.6;
+transition: var(--transition);
+overflow-x: hidden;
+}
+
+.container {
+width: 95%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 15px;
+}
+
+/* ===== PRELOADER ===== */
+.preloader {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: var(--bg);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+transition: opacity 0.5s ease;
+}
+
+.preloader-logo {
+width: 80px;
+height: 80px;
+margin-bottom: 20px;
+position: relative;
+}
+
+.preloader-logo-inner {
+width: 100%;
+height: 100%;
+border: 3px solid transparent;
+border-top-color: var(--accent);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+position: relative;
+}
+
+.preloader-logo-inner:before,
+.preloader-logo-inner:after {
+content: '';
+position: absolute;
+border-radius: 50%;
+border: 3px solid transparent;
+}
+
+.preloader-logo-inner:before {
+top: 5px;
+left: 5px;
+right: 5px;
+bottom: 5px;
+border-top-color: var(--primary);
+animation: spin 2s linear infinite reverse;
+}
+
+.preloader-logo-inner:after {
+top: 15px;
+left: 15px;
+right: 15px;
+bottom: 15px;
+border-top-color: var(--accent);
+animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+.preloader-text {
+font-size: 1.2rem;
+font-weight: 600;
+color: var(--primary);
+margin-top: 20px;
+opacity: 0;
+animation: fadeIn 1s ease 0.5s forwards;
+}
+
+@keyframes fadeIn {
+to { opacity: 1; }
+}
+
+/* ===== LOGO PLACEHOLDER ===== */
+.logo-placeholder {
+width: 120px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logo-placeholder img {
+height: 150%;
+width: auto;
+max-width: 100%;
+object-fit: contain;
+border-radius: 60%;
+}
+
+/* ===== HEADER ===== */
+header {
+position: fixed;
+width: 100%;
+z-index: 1000;
+padding: 20px 0;
+background-color: var(--bg);
+transition: var(--transition);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode header {
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+width: 30px;
+height: 20px;
+position: relative;
+cursor: pointer;
+z-index: 1001;
+display: none;
+}
+
+.menu-toggle span {
+display: block;
+position: absolute;
+height: 2px;
+width: 100%;
+background: var(--primary);
+border-radius: 2px;
+opacity: 1;
+left: 0;
+transform: rotate(0deg);
+transition: var(--transition);
+}
+
+.menu-toggle span:nth-child(1) {
+top: 0;
+}
+
+.menu-toggle span:nth-child(2), .menu-toggle span:nth-child(3) {
+top: 9px;
+}
+
+.menu-toggle span:nth-child(4) {
+top: 18px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+top: 9px;
+width: 0%;
+left: 50%;
+}
+
+.menu-toggle.active span:nth-child(2) {
+transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(3) {
+transform: rotate(-45deg);
+}
+
+.menu-toggle.active span:nth-child(4) {
+top: 9px;
+width: 0%;
+left: 50%;
+}
+
+/* Navigation */
+.nav-links {
+display: flex;
+gap: 30px;
+align-items: center;
+}
+
+.nav-links a {
+color: var(--text);
+text-decoration: none;
+font-weight: 500;
+font-size: 0.95rem;
+position: relative;
+transition: var(--transition);
+}
+
+.nav-links a:after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: var(--accent);
+transition: var(--transition);
+}
+
+.nav-links a:hover:after {
+width: 100%;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: var(--transition);
+background-color: var(--card-bg);
+border: none;
+color: var(--primary);
+}
+
+.theme-toggle:hover {
+transform: scale(1.1);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+padding: 180px 0 100px;
+position: relative;
+overflow: hidden;
+height: 100vh;
+min-height: 700px;
+display: flex;
+align-items: center;
+margin-bottom: -40px
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.hero h1 {
+margin-bottom: 20px;
+line-height: 1.1;
+color: var(--primary);
+}
+
+.hero p {
+margin-bottom: 40px;
+color: var(--text-light);
+}
+
+.cta-buttons {
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+/* Abstract Hero Background */
+.hero-abstract {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+z-index: 1;
+}
+
+.hero-shape {
+position: absolute;
+border-radius: 50%;
+filter: blur(40px);
+opacity: 0.1;
+transform-origin: center;
+background-color: var(--primary);
+}
+
+.hero-shape-1 {
+width: 300px;
+height: 300px;
+top: 20%;
+left: 10%;
+animation: float 8s ease-in-out infinite;
+}
+
+.hero-shape-2 {
+width: 400px;
+height: 400px;
+bottom: 10%;
+right: 5%;
+animation: float 10s ease-in-out infinite 2s;
+}
+
+.hero-shape-3 {
+width: 200px;
+height: 200px;
+top: 50%;
+right: 20%;
+animation: float 7s ease-in-out infinite 1s;
+}
+
+.hero-shape-4 {
+width: 150px;
+height: 150px;
+bottom: 30%;
+left: 30%;
+animation: float 6s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+0%, 100% {
+    transform: translateY(0) translateX(0);
+}
+50% {
+    transform: translateY(-20px) translateX(20px);
+}
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 12px 24px;
+border-radius: 50px;
+font-weight: 600;
+text-decoration: none;
+transition: var(--transition);
+position: relative;
+overflow: hidden;
+border: none;
+cursor: pointer;
+}
+
+.btn-primary {
+background-color: var(--primary);
+color: var(--bg);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+background-color: transparent;
+color: var(--primary);
+border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+background-color: var(--primary);
+color: var(--bg);
+}
+
+/* ===== SERVICES ===== */
+.services {
+padding: 100px 0;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 60px;
+}
+
+.section-title h2 {
+position: relative;
+display: inline-block;
+margin-bottom: 15px;
+color: var(--primary);
+}
+
+.section-title h2:after {
+content: '';
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 50px;
+height: 3px;
+background-color: var(--accent);
+}
+
+.section-title p {
+color: var(--text-light);
+}
+
+.service-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+
+.service-card {
+background-color: var(--card-bg);
+border-radius: 15px;
+padding: 40px 30px;
+transition: var(--transition);
+position: relative;
+overflow: hidden;
+z-index: 1;
+border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .service-card {
+border-color: rgba(255, 255, 255, 0.05);
+}
+
+.service-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+font-size: 2.5rem;
+color: var(--primary);
+margin-bottom: 20px;
+}
+
+.service-card h3 {
+margin-bottom: 15px;
+color: var(--primary);
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio {
+padding: 100px 0;
+background-color: var(--card-bg);
+}
+
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+
+.portfolio-item {
+border-radius: 15px;
+overflow: hidden;
+position: relative;
+height: 300px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .portfolio-item {
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-img {
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+transition: transform 0.8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+
+.portfolio-info {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+padding: 30px;
+background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+color: white;
+transform: translateY(100%);
+transition: var(--transition);
+opacity: 0;
+}
+
+.portfolio-item:hover .portfolio-info {
+transform: translateY(0);
+opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-img {
+transform: scale(1.1);
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+padding: 100px 0;
+}
+
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+
+.testimonial-card {
+background-color: var(--card-bg);
+border-radius: 15px;
+padding: 30px;
+position: relative;
+transition: var(--transition);
+border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .testimonial-card {
+border-color: rgba(255, 255, 255, 0.05);
+}
+
+.testimonial-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-testimonial {
+background-color: rgba(0, 0, 0, 0.05);
+border-left: 4px solid var(--primary);
+padding: 15px;
+border-radius: 0 8px 8px 0;
+margin-bottom: 20px;
+position: relative;
+}
+
+.dark-mode .whatsapp-testimonial {
+background-color: rgba(255, 255, 255, 0.05);
+}
+
+.whatsapp-testimonial:before {
+content: '';
+position: absolute;
+bottom: -10px;
+left: 20px;
+border-width: 10px 10px 0;
+border-style: solid;
+border-color: rgba(0, 0, 0, 0.05) transparent;
+}
+
+.dark-mode .whatsapp-testimonial:before {
+border-color: rgba(255, 255, 255, 0.05) transparent;
+}
+
+.testimonial-author {
+display: flex;
+align-items: center;
+}
+
+.author-avatar {
+width: 40px;
+height: 40px;
+background-color: var(--primary);
+color: var(--bg);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 15px;
+font-weight: bold;
+}
+
+.stars {
+color: var(--primary);
+margin-bottom: 5px;
+opacity: 0.8;
+}
+
+/* ===== PRICING ===== */
+.pricing {
+padding: 100px 0;
+background-color: var(--card-bg);
+}
+
+.pricing-tabs {
+display: flex;
+justify-content: center;
+margin-bottom: 40px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+padding-bottom: 5px;
+}
+
+.dark-mode .pricing-tabs {
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-tab {
+padding: 10px 20px;
+cursor: pointer;
+font-weight: 600;
+color: var(--text-light);
+transition: var(--transition);
+position: relative;
+}
+
+.pricing-tab.active {
+color: var(--primary);
+}
+
+.pricing-tab.active:after {
+content: '';
+position: absolute;
+bottom: -6px;
+left: 0;
+width: 100%;
+height: 3px;
+background-color: var(--accent);
+}
+
+.pricing-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+
+.pricing-card {
+background-color: var(--bg);
+border-radius: 15px;
+padding: 40px 30px;
+transition: var(--transition);
+position: relative;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .pricing-card {
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+border-color: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card.featured {
+border: 2px solid var(--primary);
+}
+
+.pricing-card h3 {
+margin-bottom: 15px;
+color: var(--primary);
+}
+
+.price {
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--primary);
+margin-bottom: 20px;
+}
+
+.price span {
+font-size: 1rem;
+color: var(--text-light);
+}
+
+.pricing-features {
+margin-bottom: 30px;
+}
+
+.pricing-features li {
+list-style: none;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+color: var(--text);
+}
+
+.pricing-features li:before {
+content: '✓';
+color: var(--primary);
+margin-right: 10px;
+font-weight: bold;
+}
+
+/* ===== FAQ ===== */
+.faq {
+padding: 100px 0;
+}
+
+.faq-item {
+margin-bottom: 15px;
+border-radius: 10px;
+overflow: hidden;
+background-color: var(--card-bg);
+transition: var(--transition);
+border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .faq-item {
+border-color: rgba(255, 255, 255, 0.05);
+}
+
+.faq-item:hover {
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .faq-item:hover {
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+font-weight: 600;
+color: var(--primary);
+}
+
+.faq-question i {
+transition: var(--transition);
+color: var(--primary);
+}
+
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s ease-out;
+padding: 0 20px;
+}
+
+.faq-answer-inner {
+padding: 0 0 20px;
+color: var(--text);
+}
+
+.faq-item.active .faq-question i {
+transform: rotate(180deg);
+}
+
+/* ===== CTA ===== */
+.cta {
+padding: 100px 0;
+background-color: var(--primary);
+color: var(--bg);
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.cta h2 {
+color: var(--bg);
+}
+
+.cta p {
+color: rgba(255, 255, 255, 0.8);
+max-width: 600px;
+margin: 0 auto 30px;
+}
+
+.cta .btn {
+margin-top: 20px;
+border: 2px solid var(--bg);
+}
+
+.cta .btn:hover {
+background-color: var(--bg);
+color: var(--primary);
+}
+
+.cta-bg-element {
+position: absolute;
+width: 300px;
+height: 300px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.05);
+z-index: 1;
+}
+
+.cta-bg-element:nth-child(1) {
+top: -100px;
+left: -100px;
+}
+
+.cta-bg-element:nth-child(2) {
+bottom: -100px;
+right: -100px;
+}
+
+.cta-content {
+position: relative;
+z-index: 2;
+}
+
+/* ===== FOOTER ===== */
+footer {
+padding: 80px 0 30px;
+background-color: var(--secondary);
+color: var(--text);
+}
+
+.dark-mode footer {
+background-color: #000000;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 40px;
+margin-bottom: 50px;
+}
+
+.footer-logo {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 20px;
+color: var(--primary);
+}
+
+.footer-about p {
+margin-bottom: 20px;
+color: var(--text-light);
+}
+
+.social-links {
+display: flex;
+gap: 15px;
+}
+
+.social-links a {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: var(--card-bg);
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--primary);
+transition: var(--transition);
+}
+
+.social-links a:hover {
+background-color: var(--primary);
+color: var(--bg);
+transform: translateY(-3px);
+}
+
+.footer-links h3 {
+color: var(--primary);
+margin-bottom: 20px;
+font-size: 1.2rem;
+}
+
+.footer-links ul {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 10px;
+}
+
+.footer-links a {
+color: var(--text-light);
+text-decoration: none;
+transition: var(--transition);
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+.footer-bottom {
+text-align: center;
+padding-top: 30px;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+color: var(--text-light);
+font-size: 0.9rem;
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+/* Header */
+.menu-toggle {
+    display: block;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero */
+.hero {
+    padding: 150px 0 60px;
+    min-height: 100vh;
+}
+
+.hero-shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 15%;
+    left: 5%;
+}
+
+.hero-shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: 5%;
+    right: 5%;
+}
+
+.hero-shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    right: 10%;
+}
+
+.hero-shape-4 {
+    width: 100px;
+    height: 100px;
+    bottom: 25%;
+    left: 20%;
+}
+
+.cta-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Portfolio */
+.portfolio-item {
+    height: 250px;
+}
+
+/* Special Mobile Effects */
+.service-card, .testimonial-card, .pricing-card {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1), opacity 0.6s ease;
+}
+
+.service-card.animate, .testimonial-card.animate, .pricing-card.animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.animate {
+animation: fadeInUp 0.6s forwards;
+}
+
+/* Delay animations */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
